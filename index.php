@@ -32,7 +32,7 @@ $app->get('/', function($req, $res)
 });
 
 // buat route untuk webhook
-$app->post('/webhook', function ($request, $response) use ($bot, $pass_signature)
+$app->post('/webhook', function ($request, $response) use ($bot, $pass_signature, $httpClient)
 {
     // get request body and line signature header
     $body        = file_get_contents('php://input');
@@ -266,7 +266,7 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 														return $res->withJson($result->getJSONDecodedBody(), $result->getHTTPStatus());
 													}else if($hasil['candidates'][0]['subject_id'] == "ngurahrai" || $hasil['candidates'][0]['subject_id'] == "ngurahrai1"){
 														$flexTemplate = file_get_contents("flex_message.json"); // template flex message
-														$result = $pass_signature->post(LINEBot::DEFAULT_ENDPOINT_BASE . '/v2/bot/message/reply', [
+														$result = $httpClient->post(LINEBot::DEFAULT_ENDPOINT_BASE . '/v2/bot/message/reply', [
 															'replyToken' => $event['replyToken'],
 															'messages'   => [
 																[
