@@ -28,7 +28,7 @@ $app = new Slim\App($configs);
 // buat route untuk url homepage
 $app->get('/', function($req, $res)
 {
-  echo "Silahkan add bot kenali pahlawan dengan ID : @jhj0876h";
+  echo "Silahkan add bot kenali pahlawan dengan ID : @jhj0876h \nCreated by Miky Setiawan 2018";
 });
 
 // buat route untuk webhook
