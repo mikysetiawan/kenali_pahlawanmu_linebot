@@ -212,7 +212,7 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 		HOS Cokroaminoto 
 		Pangeran Diponegoro 
 		Fatmawati  
-		\n\nDibuat oleh : Miky Setiawan (2017) \nTerimakasih telah menggunakan bot ini");
+		\n\nDibuat oleh : Miky Setiawan (2018) \nTerimakasih telah menggunakan bot ini");
 														$result = $bot->replyMessage($event['replyToken'], $message);
 														return $res->withJson($result->getJSONDecodedBody(), $result->getHTTPStatus());
 													 }else{
