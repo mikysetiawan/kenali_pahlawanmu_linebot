@@ -1,0 +1,107 @@
+{
+  "type": "carousel",
+  "contents": [
+    {
+      "type": "bubble",
+      "header": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Info Pahlawan",
+            "weight": "bold",
+            "size": "xl",
+            "margin": "md"
+          }
+        ]
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Judul Info",
+            "size": "sm",
+            "weight": "bold"
+          },
+          {
+            "type": "text",
+            "text": "Detail Judul Info",
+            "size": "sm",
+            "wrap": true,
+            "margin": "lg"
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "postback",
+              "label": "Buka Dengan Browser",
+              "displayText": "Buka Dengan Browser",
+              "data": "openbrowser"
+            },
+            "style": "primary"
+          }
+        ]
+      }
+    },
+    {
+      "type": "bubble",
+      "header": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Info Pahlawan",
+            "weight": "bold",
+            "size": "xl",
+            "margin": "md"
+          }
+        ]
+      },
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": "Judul Info",
+            "size": "sm",
+            "weight": "bold"
+          },
+          {
+            "type": "text",
+            "text": "Detail Judul Info",
+            "size": "sm",
+            "wrap": true,
+            "margin": "lg"
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "button",
+            "action": {
+              "type": "postback",
+              "label": "Buka Dengan Browser",
+              "displayText": "Buka Dengan Browser",
+              "data": "openbrowser"
+            },
+            "style": "primary"
+          }
+        ]
+      }
+    }
+  ]
+}

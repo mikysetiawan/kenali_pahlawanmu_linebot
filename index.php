@@ -265,8 +265,17 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 														$result = $bot->replyMessage($event['replyToken'], $message);
 														return $res->withJson($result->getJSONDecodedBody(), $result->getHTTPStatus());
 													}else if($hasil['candidates'][0]['subject_id'] == "ngurahrai" || $hasil['candidates'][0]['subject_id'] == "ngurahrai1"){
-														$message  = new TextMessageBuilder("Kolonel TNI Anumerta I Gusti Ngurah Rai \nLahir di Desa Carangsari, Petang, Kabupaten Badung, Bali, Hindia Belanda, 30 Januari 1917 – Meninggal di Marga, Tabanan, Bali, Indonesia, 20 November 1946 pada umur 29 tahun \nAdalah seorang pahlawan Indonesia dari Kabupaten Badung, Bali. \nNgurah Rai memiliki pasukan yang bernama pasukan 'Ciung Wanara' yang melakukan pertempuran terakhir yang dikenal dengan nama Puputan Margarana. (Puputan, dalam bahasa bali, berarti habis-habisan, sedangkan Margarana berarti Pertempuran di Marga. \nMarga adalah sebuah desa ibukota kecamatan di pelosok Kabupaten Tabanan, Bali) Di tempat puputan tersebut lalu didirikan Taman Makam Pahlawan Margarana. (WIKIPEDIA)");
-														$result = $bot->replyMessage($event['replyToken'], $message);
+														$flexTemplate = file_get_contents("flex_message.json"); // template flex message
+														$result = $httpClient->post(LINEBot::DEFAULT_ENDPOINT_BASE . '/v2/bot/message/reply', [
+															'replyToken' => $event['replyToken'],
+															'messages'   => [
+																[
+																	'type'     => 'flex',
+																	'altText'  => 'Test Flex Message',
+																	'contents' => json_decode($flexTemplate)
+																]
+															],
+														]);
 														return $res->withJson($result->getJSONDecodedBody(), $result->getHTTPStatus());
 													}else if($hasil['candidates'][0]['subject_id'] == "antasari" || $hasil['candidates'][0]['subject_id'] == "antasari1"){
 														$message  = new TextMessageBuilder("Pangeran Antasari \nLahir di Kayu Tangi, Kesultanan Banjar, 1797 atau 1809 – Meninggal di Bayan Begok, Hindia Belanda, 11 Oktober 1862 pada umur 53 tahun \nAdalah seorang Pahlawan Nasional Indonesia. (WIKIPEDIA)");

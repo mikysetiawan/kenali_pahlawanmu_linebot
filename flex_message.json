@@ -1,0 +1,67 @@
+{
+    "type": "bubble",
+    "header": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "Kenali Pahlawanmu!",
+          "weight": "bold"
+        }
+      ]
+    },
+    "hero": {
+      "type": "image",
+      "url": "https://www.dicoding.com/images/small/academy/menjadi_android_developer_expert_logo_041217105708.png",
+      "size": "full",
+      "aspectRatio": "4:3",
+      "aspectMode": "cover"
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "Nama Pahlawan",
+          "size": "sm",
+          "weight": "bold"
+        },
+        {
+          "type": "text",
+          "text": "Detail Penjelasan Pahlawan.",
+          "size": "sm",
+          "wrap": true,
+          "margin": "lg"
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "horizontal",
+      "spacing": "sm",
+      "contents": [
+        {
+          "type": "button",
+          "style": "primary",
+          "action": {
+            "type": "postback",
+            "label": "Info",
+            "displayText": "Info",
+            "data": "info"
+          }
+        },
+        {
+            "type": "button",
+            "style": "primary",
+            "action": {
+              "type": "postback",
+              "label": "Cari di Google",
+              "displayText": "Cari di Google",
+              "data": "search"
+            }
+          }
+      ]
+    }
+  }
