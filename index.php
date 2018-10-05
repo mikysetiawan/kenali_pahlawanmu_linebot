@@ -282,7 +282,7 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 																]
 															],
 														]);
-														return $res->withJson($result->getJSONDecodedBody(), $result->getHTTPStatus());
+														return $response->withJson($result->getJSONDecodedBody(), $result->getHTTPStatus());
 													}else if($hasil['candidates'][0]['subject_id'] == "antasari" || $hasil['candidates'][0]['subject_id'] == "antasari1"){
 														$message  = new TextMessageBuilder("Pangeran Antasari \nLahir di Kayu Tangi, Kesultanan Banjar, 1797 atau 1809 – Meninggal di Bayan Begok, Hindia Belanda, 11 Oktober 1862 pada umur 53 tahun \nAdalah seorang Pahlawan Nasional Indonesia. (WIKIPEDIA)");
 														$result = $bot->replyMessage($event['replyToken'], $message);
@@ -375,11 +375,11 @@ Pangeran Diponegoro
 Fatmawati  
 \n\nDibuat oleh : Miky Setiawan (2018) \nTerimakasih telah menggunakan bot ini");
 											$result = $bot->replyMessage($event['replyToken'], $message);
-											return $res->withJson($result->getJSONDecodedBody(), $result->getHTTPStatus());
+											return $response->withJson($result->getJSONDecodedBody(), $result->getHTTPStatus());
 										 }else{
 											$message  = new TextMessageBuilder("Silahkan upload foto pahlawan dan dapatkan informasi mengenai pahlawan tersebut");
 											$result = $bot->replyMessage($event['replyToken'], $message);
-											return $res->withJson($result->getJSONDecodedBody(), $result->getHTTPStatus());
+											return $response->withJson($result->getJSONDecodedBody(), $result->getHTTPStatus());
 										 }
 										}
 									 }
