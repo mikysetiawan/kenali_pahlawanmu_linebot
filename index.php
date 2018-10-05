@@ -34,10 +34,6 @@ $app->get('/', function($req, $res)
 	$data['body']['contents'][0]['text'] = "TEST";
 	$newJsonString = json_encode($data);
   echo "Silahkan add bot kenali pahlawan dengan ID : @jhj0876h <br>Created by Miky Setiawan 2018";
-  echo "<br>";
-  print_r($flexTemplate);
-  echo "<br>";
-  print_r($newJsonString);
 });
 
 // buat route untuk webhook
@@ -278,6 +274,7 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 														$data['hero']['url'] = "https://upload.wikimedia.org/wikipedia/id/thumb/f/ff/Gusti_ngurah_rai.jpg/220px-Gusti_ngurah_rai.jpg";
 														$data['body']['contents'][0]['text'] = "I Gusti Ngurah Rai";
 														$data['body']['contents'][1]['text'] = "Kolonel TNI Anumerta I Gusti Ngurah Rai \nLahir di Desa Carangsari, Petang, Kabupaten Badung, Bali, Hindia Belanda, 30 Januari 1917 – Meninggal di Marga, Tabanan, Bali, Indonesia, 20 November 1946 pada umur 29 tahun \nAdalah seorang pahlawan Indonesia dari Kabupaten Badung, Bali. \nNgurah Rai memiliki pasukan yang bernama pasukan 'Ciung Wanara' yang melakukan pertempuran terakhir yang dikenal dengan nama Puputan Margarana. (Puputan, dalam bahasa bali, berarti habis-habisan, sedangkan Margarana berarti Pertempuran di Marga. \nMarga adalah sebuah desa ibukota kecamatan di pelosok Kabupaten Tabanan, Bali) Di tempat puputan tersebut lalu didirikan Taman Makam Pahlawan Margarana. (WIKIPEDIA)";
+														$data['footer']['contents'][0]['uri'] = "https://www.google.com/search?q=I+Gusti+Ngurah+Rai";
 														$newJsonString = json_encode($data);
 
 														$result = $httpClient->post(LINEBot::DEFAULT_ENDPOINT_BASE . '/v2/bot/message/reply', [
@@ -385,8 +382,22 @@ Fatmawati
 											$result = $bot->replyMessage($event['replyToken'], $message);
 											return $response->withJson($result->getJSONDecodedBody(), $result->getHTTPStatus());
 										 }else{
-											$message  = new TextMessageBuilder("Silahkan upload foto pahlawan dan dapatkan informasi mengenai pahlawan tersebut");
-											$result = $bot->replyMessage($event['replyToken'], $message);
+											$flexTemplate = file_get_contents("open_camera.json"); // template flex message
+											//Editing template
+											$data = json_decode($flexTemplate, true);
+											$result = $httpClient->post(LINEBot::DEFAULT_ENDPOINT_BASE . '/v2/bot/message/reply', [
+												'replyToken' => $event['replyToken'],
+												'messages'   => [
+													[
+														'type'     => 'flex',
+														'altText'  => 'Info Pahlawan',
+														'contents' => json_decode($flexTemplate)
+													]
+												],
+											]);
+
+											//$message  = new TextMessageBuilder("Silahkan upload foto pahlawan dan dapatkan informasi mengenai pahlawan tersebut");
+											//$result = $bot->replyMessage($event['replyToken'], $message);
 											return $response->withJson($result->getJSONDecodedBody(), $result->getHTTPStatus());
 										 }
 										}

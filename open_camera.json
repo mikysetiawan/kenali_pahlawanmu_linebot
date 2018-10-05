@@ -11,26 +11,13 @@
         }
       ]
     },
-    "hero": {
-      "type": "image",
-      "url": "https://www.dicoding.com/images/small/academy/menjadi_android_developer_expert_logo_041217105708.png",
-      "size": "full",
-      "aspectRatio": "4:3",
-      "aspectMode": "cover"
-    },
     "body": {
       "type": "box",
       "layout": "vertical",
       "contents": [
         {
           "type": "text",
-          "text": "Nama Pahlawan",
-          "size": "sm",
-          "weight": "bold"
-        },
-        {
-          "type": "text",
-          "text": "Detail Penjelasan Pahlawan.",
+          "text": "Silahkan upload foto pahlawan dan dapatkan informasi mengenai pahlawan tersebut.",
           "size": "sm",
           "wrap": true,
           "margin": "lg"
@@ -46,9 +33,8 @@
             "type": "button",
             "style": "primary",
             "action": {
-              "type": "uri",
-              "label": "Cari di Google",
-              "uri": ""
+              "type":"camera",
+              "label":"Camera"
             }
           }
       ]
