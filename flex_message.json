@@ -48,7 +48,7 @@
             "action": {
               "type": "uri",
               "label": "Cari di Google",
-              "uri": "https://developers.line.me"
+              "uri": "https://www.google.com/search?q=I+Gusti+Ngurah+Rai"
             }
           }
       ]
