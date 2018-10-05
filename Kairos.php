@@ -17,8 +17,8 @@ class Kairos {
   public function __construct() {
 
        $this->hostname = 'http://api.kairos.com/';
-       $this->app_id = "";
-       $this->app_key = "";
+       $this->app_id = "3940a459";
+       $this->app_key = "bb639217465fe9ec35ebb745a5c3fe9f";
     }
 
 
