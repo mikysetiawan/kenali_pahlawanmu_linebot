@@ -31,7 +31,7 @@ $app->get('/', function($req, $res)
 	$flexTemplate = file_get_contents("flex_message.json"); // template flex message
 	//Editing template
 	$data = json_decode($flexTemplate, true);
-	$data['body']['content'][0]['text'] = "TEST";
+	$data['body']['contents'][0]['text'] = "TEST";
 	$newJsonString = json_encode($data);
   echo "Silahkan add bot kenali pahlawan dengan ID : @jhj0876h <br>Created by Miky Setiawan 2018";
   echo "<br>";
@@ -276,9 +276,9 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 													}else if($hasil['candidates'][0]['subject_id'] == "ngurahrai" || $hasil['candidates'][0]['subject_id'] == "ngurahrai1"){
 														$flexTemplate = file_get_contents("flex_message.json"); // template flex message
 														//Editing template
-														//$data = json_decode($flexTemplate, true);
-														//$data['body']['content'][0]['text'] = "TEST";
-														//$newJsonString = json_encode($data);
+														$data = json_decode($flexTemplate, true);
+														$data['body']['contents'][0]['text'] = "TEST";
+														$newJsonString = json_encode($data);
 
 
 														$result = $httpClient->post(LINEBot::DEFAULT_ENDPOINT_BASE . '/v2/bot/message/reply', [
