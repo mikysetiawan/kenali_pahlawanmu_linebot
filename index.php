@@ -266,13 +266,19 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 														return $res->withJson($result->getJSONDecodedBody(), $result->getHTTPStatus());
 													}else if($hasil['candidates'][0]['subject_id'] == "ngurahrai" || $hasil['candidates'][0]['subject_id'] == "ngurahrai1"){
 														$flexTemplate = file_get_contents("flex_message.json"); // template flex message
+														//Editing template
+														$data = json_decode($flexTemplate, true);
+														$data['body']['content'][0]['text'] = "TEST";
+														$newJsonString = json_encode($data);
+
+
 														$result = $httpClient->post(LINEBot::DEFAULT_ENDPOINT_BASE . '/v2/bot/message/reply', [
 															'replyToken' => $event['replyToken'],
 															'messages'   => [
 																[
 																	'type'     => 'flex',
-																	'altText'  => 'Test Flex Message',
-																	'contents' => json_decode($flexTemplate)
+																	'altText'  => 'Info Pahlawan',
+																	'contents' => json_decode($newJsonString)
 																]
 															],
 														]);
