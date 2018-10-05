@@ -28,7 +28,16 @@ $app = new Slim\App($configs);
 // buat route untuk url homepage
 $app->get('/', function($req, $res)
 {
+	$flexTemplate = file_get_contents("flex_message.json"); // template flex message
+	//Editing template
+	$data = json_decode($flexTemplate, true);
+	$data['body']['content'][0]['text'] = "TEST";
+	$newJsonString = json_encode($data);
   echo "Silahkan add bot kenali pahlawan dengan ID : @jhj0876h <br>Created by Miky Setiawan 2018";
+  echo "<br>";
+  print_r($flexTemplate);
+  echo "<br>";
+  print_r($newJsonString);
 });
 
 // buat route untuk webhook
