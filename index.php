@@ -259,7 +259,7 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 															],
 														]);
 													}else if($hasil['candidates'][0]['subject_id'] == "franskaisiepo"){
-														$data['hero']['url'] = "http://cdn2.tstatic.net/jateng/foto/bank/images/frans-kaisiepo_20161225_194715.jpg";
+														$data['hero']['url'] = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Frans_Kaisiepo_1999_Indonesia_stamp.jpg/220px-Frans_Kaisiepo_1999_Indonesia_stamp.jpg";
 														$data['body']['contents'][0]['text'] = "Frans Kaisiepo";
 														$data['body']['contents'][1]['text'] = "Lahir di Wardo, Biak, Papua, 10 Oktober 1921 – Meninggal di Jayapura, Papua, 10 April 1979 pada umur 57 tahun \n\nAdalah pahlawan nasional Indonesia dari Papua. Frans terlibat dalam Konferensi Malino tahun 1946 yang membicarakan mengenai pembentukan Republik Indonesia Serikat sebagai wakil dari Papua. Ia mengusulkan nama Irian, kata dalam bahasa Biak yang berarti tempat yang panas. \nSelain itu, ia juga pernah menjabat sebagai Gubernur Papua antara tahun 1964-1973. Ia dimakamkan di Taman Makam Pahlawan Cendrawasih, Jayapura. (WIKIPEDIA)";
 														$data['footer']['contents'][0]['action']['uri'] = "https://www.google.com/search?q=Frans+Kaisiepo";
