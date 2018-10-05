@@ -693,7 +693,7 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 															],
 														]);
 													}else if($hasil['candidates'][0]['subject_id'] == "franskaisiepo"){
-														$data['hero']['url'] = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Teuku_Umar.jpg/200px-Teuku_Umar.jpg";
+														$data['hero']['url'] = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Frans_Kaisiepo_1999_Indonesia_stamp.jpg/220px-Frans_Kaisiepo_1999_Indonesia_stamp.jpg";
 														$data['body']['contents'][0]['text'] = "Frans Kaisiepo";
 														$data['body']['contents'][1]['text'] = "Lahir di Wardo, Biak, Papua, 10 Oktober 1921 – Meninggal di Jayapura, Papua, 10 April 1979 pada umur 57 tahun \n\nAdalah pahlawan nasional Indonesia dari Papua. Frans terlibat dalam Konferensi Malino tahun 1946 yang membicarakan mengenai pembentukan Republik Indonesia Serikat sebagai wakil dari Papua. Ia mengusulkan nama Irian, kata dalam bahasa Biak yang berarti tempat yang panas. \nSelain itu, ia juga pernah menjabat sebagai Gubernur Papua antara tahun 1964-1973. Ia dimakamkan di Taman Makam Pahlawan Cendrawasih, Jayapura. (WIKIPEDIA)";
 														$data['footer']['contents'][0]['action']['uri'] = "https://www.google.com/search?q=Frans+Kaisiepo";
@@ -726,7 +726,7 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 																]
 															],
 														]);
-													}else if($hasil['candidates'][0]['subject_id'] == "patimura" || $hasil['candidates'][0]['subject_id'] == "patimura1" || $hasil['candidates'][0]['subject_id'] == "patimura2"){
+													}else if($hasil['candidates'][0]['subject_id'] == "patimura" || $hasil['candidates'][0]['subject_id'] == "patimura1" || $hasil['candidates'][0]['subject_id'] == "patimura3"){
 														$data['hero']['url'] = "https://cdns.klimg.com/merdeka.com/i/w/tokoh/2012/03/15/4595/200x300/kapitan-pattimura.jpg";
 														$data['body']['contents'][0]['text'] = "Kapitan Pattimura (atau Thomas Matulessy)";
 														$data['body']['contents'][1]['text'] = "Lahir di Haria, pulau Saparua, Maluku, 8 Juni 1783 – Meninggal di Ambon, Maluku, 16 Desember 1817 pada umur 34 tahun \n\nDikenal dengan nama Kapitan Pattimura adalah pahlawan Maluku dan merupakan Pahlawan nasional Indonesia. \nMenurut buku biografi Pattimura versi pemerintah yang pertama kali terbit, M Sapija menulis bahwa pahlawan Pattimura tergolong turunan bangsawan dan berasal dari Nusa Ina (Seram). Ayahnya yang bernama Antoni Mattulessy adalah anak dari Kasimiliali Pattimura Mattulessy. Yang terakhir ini adalah putra raja Sahulau. Sahulau merupakan nama orang di negeri yang terletak dalam sebuah teluk di Seram. (WIKIPEDIA)";
