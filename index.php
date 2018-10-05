@@ -267,9 +267,9 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 													}else if($hasil['candidates'][0]['subject_id'] == "ngurahrai" || $hasil['candidates'][0]['subject_id'] == "ngurahrai1"){
 														$flexTemplate = file_get_contents("flex_message.json"); // template flex message
 														//Editing template
-														$data = json_decode($flexTemplate, true);
-														$data['body']['content'][0]['text'] = "TEST";
-														$newJsonString = json_encode($data);
+														//$data = json_decode($flexTemplate, true);
+														//$data['body']['content'][0]['text'] = "TEST";
+														//$newJsonString = json_encode($data);
 
 
 														$result = $httpClient->post(LINEBot::DEFAULT_ENDPOINT_BASE . '/v2/bot/message/reply', [
@@ -278,7 +278,7 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 																[
 																	'type'     => 'flex',
 																	'altText'  => 'Info Pahlawan',
-																	'contents' => json_decode($newJsonString)
+																	'contents' => json_decode($flexTemplate)
 																]
 															],
 														]);
