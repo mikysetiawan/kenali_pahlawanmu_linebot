@@ -33,8 +33,9 @@
             "type": "button",
             "style": "primary",
             "action": {
-              "type":"camera",
-              "label":"Camera"
+              "type": "uri",
+              "label": "Buka Camera",
+              "uri": "line://nv/camera/"
             }
           }
       ]

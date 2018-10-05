@@ -48,7 +48,7 @@
             "action": {
               "type": "uri",
               "label": "Cari di Google",
-              "uri": ""
+              "uri": "https://developers.line.me"
             }
           }
       ]
