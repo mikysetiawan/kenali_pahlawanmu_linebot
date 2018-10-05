@@ -287,7 +287,7 @@ $app->post('/webhook', function ($request, $response) use ($bot, $pass_signature
 																[
 																	'type'     => 'flex',
 																	'altText'  => 'Info Pahlawan',
-																	'contents' => json_decode($flexTemplate)
+																	'contents' => json_decode($newJsonString)
 																]
 															],
 														]);
